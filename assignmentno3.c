@@ -11,7 +11,7 @@ int* fd;
 int nbytes;
 char c;
 int word=0;
-int char=0;
+int char_count=0;
 int line=0;
 fd=fopen("Result.csv",O_RDONLY);
 if(fd<0)
@@ -21,11 +21,11 @@ exit(1);
 }
 for (c = getc(fd); c != EOF; c = getc(fd)) 
 {
-char++;
+char_count++;
 if (c == '\n') // Increment count if this character is newline 
 line++;
 if (c == ' ' | c == ',')
 word++;
 }
-printf("cc = %d,wc = %d,lc = %d",char,word,line); 
+printf("cc = %d,wc = %d,lc = %d",char_count,word,line); 
 }
