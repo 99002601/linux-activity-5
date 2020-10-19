@@ -16,7 +16,7 @@ exit(1);
 }
 int maxlength=300;
 char buffer[maxlength];
-size_buf=read(fd1,buf,maxlength);
+size_buffer=read(fd1,buffer,maxlength);
 if(size_buffer<0)
 {
 perror("read");
@@ -29,7 +29,7 @@ if(fd2<0)
 perror("open");
 exit(3);
 }
-size_file = write(fd2, buffer, maxlen);
+size_file = write(fd2, buffer, maxlength);
 if(size_file<0)
 {
 perror("write");
